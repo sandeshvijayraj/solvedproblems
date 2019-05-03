@@ -17,7 +17,7 @@ def dothis(i):
                 else:
                         return [temsum2,list2[1]]
         else:
-                return [-1001,[]] 
+                return [-10000001,[]]
 def main():
         global arr,considered
         cases=int(input())
