@@ -1,0 +1,26 @@
+arr=[]
+considered=[]
+def dothis(i):
+        global arr,considered
+        if i<len(arr):
+                list1=dothis(i+1)
+                temsum1=list1[0]
+                list2=dothis(i+2)
+                temsum2=arr[i]+list2[0]
+                list2[1].append(arr[i])
+                if temsum1>temsum2:
+                        return [temsum1,list1[1]]
+                else:
+                        return [temsum2,list2[1]]
+        else:
+                return [0,[]] 
+def main():
+        global arr,considered
+        cases=int(input())
+        for _ in range(cases):
+                n=int(input())
+                arr=input().split()
+                arr=list(map(int,arr))
+                sum=dothis(0)
+                print(''.join(list(map(str,sum[1]))))
+main()
