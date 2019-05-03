@@ -7,13 +7,17 @@ def dothis(i):
                 temsum1=list1[0]
                 list2=dothis(i+2)
                 temsum2=arr[i]+list2[0]
-                list2[1].append(arr[i])
+                if temsum2>arr[i]:
+                    list2[1].append(arr[i])
+                else:
+                    list2[1]=[arr[i]]
+                    temsum2=arr[i]
                 if temsum1>temsum2:
                         return [temsum1,list1[1]]
                 else:
                         return [temsum2,list2[1]]
         else:
-                return [0,[]] 
+                return [-1001,[]] 
 def main():
         global arr,considered
         cases=int(input())
